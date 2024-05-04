@@ -36,7 +36,7 @@
                     TextChanged="OnTextEditTextChanged" />
                 <dx:DXButton
                     Clicked="OnLoginClicked"
-                    IsEnabled="{Binding IsLoginEnabled}"
+                    
                     Content="Login" />
             </dx:DXStackLayout>
         </dx:DXStackLayout>
