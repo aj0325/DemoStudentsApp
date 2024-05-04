@@ -29,7 +29,7 @@ namespace Demo.DemoCBIA
                     fonts.AddFont("roboto-regular.ttf", "Roboto");
                 })
                 .UseMauiMaps(); ;
-            builder.Services.AddDemoApiClientService(x => x.ApiBaseAddress = "http://10.0.2.2:5015/");
+            builder.Services.AddDemoApiClientService(x => x.ApiBaseAddress = "https://maui-portal.vercel.app/");
             builder.Services.AddTransient<CulturalEventsPage>();
 
             return builder.Build();
