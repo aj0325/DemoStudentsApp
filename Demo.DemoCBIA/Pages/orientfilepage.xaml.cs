@@ -1,22 +1,15 @@
+
+using Demo.DemoCBIA.ViewModels;
 using System.Net;
 namespace Demo.DemoCBIA.Pages;
 
 public partial class orientfilepage : ContentPage
 {
-	public orientfilepage()
+	public orientfilepage(string pdfFileName)
 	{
 		InitializeComponent();
-#if ANDROID
-        Microsoft.Maui.Handlers.WebViewHandler.Mapper.AppendToMapping("pdfviewer", (handler, View) =>
-        {
-            handler.PlatformView.Settings.AllowFileAccess = true;
-            handler.PlatformView.Settings.AllowFileAccessFromFileURLs = true;
-            handler.PlatformView.Settings.AllowUniversalAccessFromFileURLs = true;
-        });
+        var viewModel = BindingContext as PdfViewerViewModel;
+        viewModel?.UpdatePdfFile(pdfFileName);
 
-        pdfview.Source = $"file:///android_asset/pdfjs/web/viewer.html?file=file:///android_asset/{WebUtility.UrlEncode("sample-one-day-orientation-schedule.pdf")}";
-#else
-        pdfview.Source = "sample-one-day-orientation-schedule.pdf";
-#endif
     }
 }
