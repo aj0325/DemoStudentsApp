@@ -18,14 +18,14 @@ public partial class OrientationFilesPage : ContentPage
     }
     private async void OrientFileButton_Clicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Clicked on maps", "Navigating to Map", "OK");
-        await Navigation.PushAsync(new orientfilepage());
+        //await DisplayAlert("Clicked on maps", "Navigating to Map", "OK");
+        await Navigation.PushAsync(new orientfilepage("Orientation-Guide.pdf"));
     }
 
     private async void HandbookButton_Clicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Clicked on pdf", "Navigating to pdf", "OK");
-        await Navigation.PushAsync(new cityhandbook());
+        //await DisplayAlert("Clicked on pdf", "Navigating to pdf", "OK");
+        await Navigation.PushAsync(new cityhandbook("mumbai_handbook.pdf"));
     }
 
 
